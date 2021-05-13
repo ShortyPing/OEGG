@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PublicAboutComponent } from './public-about/public-about.component';
 import { PublicHomeComponent } from './public-home/public-home.component';
 import { PublicInitComponent } from './public-init/public-init.component';
 
@@ -11,7 +12,12 @@ const routes: Routes = [
       {
         path: "",
         component: PublicHomeComponent
+      },
+      {
+        path: "about",
+        component: PublicAboutComponent
       }
+    
     ]
   }
 ];

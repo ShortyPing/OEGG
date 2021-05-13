@@ -1,11 +1,54 @@
-<div class="container">
-    <h1 id="title">Österreich-Guatemala Gesellschaft</h1>
+<div class="titlewrapper">
+    <div id="titlebox" class="container">
+
+        <div class="row">
+            <div class="col-sm-3">
+                <img id="logo" src="/assets/img/pan-logo.PNG" width="150">
+            </div>
+            <div class="col-sm-9">
+                <h1 id="title">Österreich-Guatemala Gesellschaft</h1>
+                <h3 id="subtitle">Tempor sunt aliquip irure proident officia pariatur sunt sunt.</h3>
+            </div>
+        </div>
+    </div>
 </div>
 
-<nav class="nb">
-    <ul>
-        <li>ds</li>
-    </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <button class="navbar-toggler" data-target="#navbar" data-toggle="collapse" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/">Startseite</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/about">Über die ÖGG</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
-<router-outlet></router-outlet>
+
+
+
+
+
+<div class="c">
+    <router-outlet></router-outlet>
+</div>
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 link">Impressum</div>
+            <div class="col-sm-6 link">Datenschutzerklärung</div>
+            <div class="col-sm-12 copyright">&copy; {{year}} ÖGG » Alle Rechte vorbehalten - All rights reserved</div>
+        </div>
+    </div>
+</footer>

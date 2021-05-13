@@ -1,12 +1,115 @@
-#title {
-    text-align: center;
-    font-family: 'Roboto';
-    font-weight: 300;
-    margin-top: 25px;
+#titlebox {
+    width: 100%;
+    height: auto;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-bottom: 30px;
+
+
+    #title {
+        font-family: "Roboto";
+        font-weight: 400;
+        font-size: 40px;
+        top: 1vh;
+        @media screen and(max-width: 800px) {
+            font-size: 7vw;
+            text-align: center;
+        }
+    }
+
+    #subtitle {
+        font-family: "Roboto";
+        font-weight: 300;
+        top: 1vh;
+        font-size: 25px;
+        @media screen and(max-width: 800px) {
+            font-size: 3.4vw;
+            text-align: center;
+        }
+    }
+
+    #logo {
+        @media screen and(max-width: 800px) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }
 
-.nb {
-    width: 100%;
+.titlewrapper {
+    background: white;
+    padding-top: 50px;
+}
+
+#content {
+    margin-left: 20vw;
+}
+
+.navbar {
+    background-color: hsl(198, 65%, 54%) !important;
+
+    .nav-link {
+        text-decoration: none;
+    }
+ 
+    @media screen and(max-width: 990px) {
+        background-color: white !important;
+    }
+
+    
+}
+
+.navbar-toggler {
+    display: block;
+    margin-left: auto;
+
+    @media screen and(min-width: 990px) {
+        display: none !important;
+    }
+}
+
+.navbar-collapse.collapse.show {
+    text-align: center;
+}
+
+.navbar-collapse.collapsing {
+    text-align: center;
+}
+
+.c {
+    margin-top: 20px;
+    @media screen and (max-width: 800px) {
+        margin-top: 0px;
+    }
+}
+
+
+.footer {
     height: 50px;
-    background-color: #008f30;
+    width: 100%;
+    background-color: rgb(49, 49, 49);
+    bottom: 0px;
+    position: fixed;
+    text-align: center;
+    color: white;
+
+    @media screen and(max-width: 600px) {
+        height: 80px;
+
+        .copyright {
+            font-size: 3vw;
+        }
+    }
+
+    .link {
+        cursor: pointer;
+        transition: color .5s;
+        &:hover {
+            color: rgb(184, 184, 184);
+        }
+    }
+
+    
 }

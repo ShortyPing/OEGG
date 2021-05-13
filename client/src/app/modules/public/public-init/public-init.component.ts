@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-public-init',
@@ -9,7 +9,10 @@ export class PublicInitComponent implements OnInit {
 
   constructor() { }
 
+  year: string = ""
   ngOnInit(): void {
+    this.year = new Date().getFullYear().toString()
   }
+
 
 }
