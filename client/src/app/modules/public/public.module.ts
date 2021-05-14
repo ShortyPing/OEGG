@@ -5,6 +5,7 @@ import { PublicRoutingModule } from './public-routing.module';
 import { PublicInitComponent } from './public-init/public-init.component';
 import { PublicHomeComponent } from './public-home/public-home.component';
 import { PublicAboutComponent } from './public-about/public-about.component';
+import { PublicPrivacyComponent } from './public-privacy/public-privacy.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { PublicAboutComponent } from './public-about/public-about.component';
   
     PublicInitComponent,
        PublicHomeComponent,
-       PublicAboutComponent
+       PublicAboutComponent,
+       PublicPrivacyComponent
   ],
   imports: [
     CommonModule,

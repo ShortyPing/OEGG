@@ -1,3 +1,5 @@
+@use '../../../_scss/colors';
+
 #titlebox {
     width: 100%;
     height: auto;
@@ -48,7 +50,7 @@
 }
 
 .navbar {
-    background-color: hsl(198, 65%, 54%) !important;
+    background-color: colors.$primary--1 !important;
 
     .nav-link {
         text-decoration: none;
@@ -80,6 +82,7 @@
 
 .c {
     margin-top: 20px;
+    margin-bottom: 100px;
     @media screen and (max-width: 800px) {
         margin-top: 0px;
     }
@@ -94,6 +97,7 @@
     position: fixed;
     text-align: center;
     color: white;
+    margin-top: 100px;
 
     @media screen and(max-width: 600px) {
         height: 80px;
