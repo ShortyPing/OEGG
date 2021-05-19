@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PublicAboutComponent } from './public-about/public-about.component';
+import { PublicContactComponent } from './public-contact/public-contact.component';
+import { PublicDirectorsComponent } from './public-directors/public-directors.component';
+import { PublicGalleryComponent } from './public-gallery/public-gallery.component';
 import { PublicHomeComponent } from './public-home/public-home.component';
 import { PublicInitComponent } from './public-init/public-init.component';
+import { PublicLinksComponent } from './public-links/public-links.component';
+import { PublicMembershipComponent } from './public-membership/public-membership.component';
 import { PublicPrivacyComponent } from './public-privacy/public-privacy.component';
 
 const routes: Routes = [
@@ -15,12 +19,28 @@ const routes: Routes = [
         component: PublicHomeComponent
       },
       {
-        path: "about",
-        component: PublicAboutComponent
-      },
-      {
         path: "privacy",
         component: PublicPrivacyComponent
+      },
+      {
+        path: "directors",
+        component: PublicDirectorsComponent
+      },
+      {
+        path: "membership",
+        component: PublicMembershipComponent
+      },
+      {
+        path: "links",
+        component: PublicLinksComponent
+      },
+      {
+        path: "gallery",
+        component: PublicGalleryComponent
+      },
+      {
+        path: "contact",
+        component: PublicContactComponent
       }
     
     ]
