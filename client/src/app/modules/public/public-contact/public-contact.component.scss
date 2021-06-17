@@ -1,0 +1,21 @@
+@use '../../../_scss/colors';
+
+button {
+    border-radius: 0;
+    
+}
+
+#contact-card {
+    width: 100%;
+    border: gray 1px solid;
+    padding: 20px;
+    border-radius: 2px;
+    @media screen and(max-width: 800px) {
+        width: 80%;
+        
+    }
+}
+
+.alert {
+    border-radius: 0;
+}

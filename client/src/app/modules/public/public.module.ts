@@ -12,6 +12,11 @@ import { PublicGalleryComponent } from './public-gallery/public-gallery.componen
 import { PublicContactComponent } from './public-contact/public-contact.component';
 import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { PrivacyModalComponent } from './public-init/modals/privacy-modal/privacy-modal.component';
+import { PublicGoalsComponent } from './public-goals/public-goals.component';
+import { PublicActivitiesComponent } from './public-activities/public-activities.component';
+import { PublicImprintComponent } from './public-imprint/public-imprint.component';
 
 
 @NgModule({
@@ -24,7 +29,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     PublicMembershipComponent,
     PublicLinksComponent,
     PublicGalleryComponent,
-    PublicContactComponent
+    PublicContactComponent,
+    PrivacyModalComponent,
+    PublicGoalsComponent,
+    PublicActivitiesComponent,
+    PublicImprintComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +44,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   providers: [
     {
       provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LchI9YaAAAAAPtzJGtFkvb5w-A6X2cNeeGXR9dU"
-    }
+    },
+    CookieService
   ]
 })
 export class PublicModule { }

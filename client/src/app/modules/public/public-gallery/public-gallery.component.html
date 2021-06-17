@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Galerie</h1>
+    <p>Hier finden Sie Bilder zu unseren Aktivitäten</p>
+    <hr>
+    
+
+    <div class="row">
+        <div class="col-sm-4" *ngFor="let image of images">
+            <img [src]="'/assets/img/gallery/' + image.imageName" class="img-fluid hover-img" alt="" data-toggle="modal" [attr.data-target]="'#' + image.imageName.split('.')[0]">
+        </div>
+    </div>
+
+    <div [id]="image.imageName.split('.')[0]" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" *ngFor="let image of images">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img [src]="'/assets/img/gallery/' + image.imageName" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
