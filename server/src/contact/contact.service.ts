@@ -16,7 +16,7 @@ export class ContactService {
                 request(`https://www.google.com/recaptcha/api/siteverify?secret=${StaticVariables.reCaptchaSecret}&response=${body.captchaToken}&remoteip=${requestIp.getClientIp(req)}`, {}, (err, resp, capbody) => {
                     capbody = JSON.parse(capbody)
                     if (capbody["success"] == true && capbody["score"] >= 0.5) {
-                        MailTransporter.sendMail({
+                        /* MailTransporter.sendMail({
                             to: "m.steinmoetzger@gmx.at",
                             from: "ÖGG - Kontaktformular <contact@oe-gg.org>",
                             subject: "ÖGG - Kontaktformularanfrage",
@@ -33,7 +33,7 @@ export class ContactService {
                         })
                         resolve({
                             status: "Sent"
-                        })
+                        }) */
                     } else {
                         reject(new HttpException("Spam blocking", 418))
                     }
