@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 import { ContactFormService } from 'src/app/services/contact-form/contact-form.service';
 
@@ -23,11 +23,11 @@ export class PublicContactComponent implements OnInit {
 
 
 
-  contactForm = new FormGroup({
-    email: new FormControl(''),
-    name: new FormControl(''),
-    text: new FormControl(''),
-    hp: new FormControl('application-hp-verify')
+  contactForm = new UntypedFormGroup({
+    email: new UntypedFormControl(''),
+    name: new UntypedFormControl(''),
+    text: new UntypedFormControl(''),
+    hp: new UntypedFormControl('application-hp-verify')
   })
 
   submitForm() {

@@ -1,21 +1,22 @@
-import { CacheModule, HttpService, Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ContactModule } from './contact/contact.module';
-import { PagesModule } from './pages/pages.module';
+import {Module} from '@nestjs/common';
+import {AppController} from './app.controller';
+import {AppService} from './app.service';
+import {ConfigModule} from "@nestjs/config";
+import {MongooseModule} from "@nestjs/mongoose";
+import { UserModule } from './_modules/user/user.module';
+import config from "./config";
+import {JwtModule} from "@nestjs/jwt";
 
 @Module({
-  imports: [
-    ContactModule,
-    CacheModule.register(),
-    PagesModule,
-    MongooseModule.forRoot('mongodb://OEGG:yIaQORcB@localhost/OEGG', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }),
-  ],
-  controllers: [AppController],
-  providers: [AppService],
+    imports: [
+        ConfigModule.forRoot({
+            isGlobal: true
+        }),
+        MongooseModule.forRoot(config().mongodbConnection),
+        UserModule
+    ],
+    controllers: [AppController],
+    providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+}
