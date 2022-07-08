@@ -57,7 +57,6 @@ const routes: Routes = [
         path: "imprint",
         component: PublicImprintComponent
       }
-    
     ]
   }
 ];

@@ -1,0 +1,54 @@
+@use "src/app/_scss/components";
+
+#container {
+  width: 20%;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+  border: 1px lightgray solid;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07);
+  padding: 30px;
+
+  @media screen and(max-width: 1200px) {
+    width: 90%;
+  }
+
+}
+
+h1 {
+  text-align: center;
+  font-weight: normal;
+}
+
+input {
+  display: block;
+  margin: 5px auto 0;
+  border: 1px lightgray solid;
+  padding: 5px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+#button-container {
+
+  width: fit-content;
+  margin: 15px auto 0;
+
+  button {
+    @include components.button(#1d851b, white);
+  }
+}
+
+p {
+  text-align: center;
+  color: red;
+}
