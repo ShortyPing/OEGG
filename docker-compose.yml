@@ -11,8 +11,6 @@ services:
     restart: always
       #    ports:
     #      - "12345:27017"
-    env_file:
-      - "environment/mongodb.env"
     volumes:
       - "data:/data/db"
       - "configdb:/data/configdb"
