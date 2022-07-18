@@ -20,4 +20,10 @@ export class AdminNewsComponent implements OnInit {
     })
   }
 
+  deleteArticle(id: string) {
+    this.newsService.deleteNewsArticle(id).subscribe({
+      next: () => this.ngOnInit()
+    })
+  }
+
 }

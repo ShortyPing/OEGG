@@ -1,7 +1,7 @@
 import {BadRequestException, Injectable, NotFoundException} from '@nestjs/common';
 import {InjectModel} from "@nestjs/mongoose";
 import {News} from "../../models/news.model";
-import mongoose, {Model} from "mongoose";
+import mongoose, {Model, mongo} from "mongoose";
 import {RedisService} from "../../_services/redis/redis.service";
 
 @Injectable()
@@ -18,8 +18,8 @@ export class NewsService {
                 title,
                 content: text
             })
-            
 
+            await this.redisService.invalidate("news")
 
             resolve({
                 status: "ok",
@@ -78,12 +78,41 @@ export class NewsService {
                 reject(new NotFoundException())
                 return;
             }
-            this.newsModel.findByIdAndDelete(id).then(() => {
+            this.newsModel.findByIdAndDelete(id).then(async () => {
+                await this.redisService.invalidate("news")
+
                 resolve({
                     status: "ok"
                 })
             })
 
+        })
+    }
+
+    public async updateNewsArticle(id: string, title: string, content: string) {
+        return new Promise(async (resolve, reject) => {
+            if(!mongoose.Types.ObjectId.isValid(id)) {
+                reject(new NotFoundException())
+                return;
+            }
+
+            this.newsModel.findById(id).then(async document => {
+                if(!document) {
+                    reject(new NotFoundException())
+                    return;
+                }
+
+                document.title = title;
+                document.content = content;
+                await document.save();
+                await this.redisService.invalidate("news");
+                await this.redisService.invalidate(`article-${id}`)
+
+                resolve({
+                    status: "Ok"
+                })
+
+            })
         })
     }
 }

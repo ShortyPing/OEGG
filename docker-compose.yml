@@ -1,0 +1,24 @@
+services:
+  oegg-backend:
+    build: server
+    restart: always
+    ports:
+      - "6363:3000"
+    env_file:
+      - "environment/backend.env"
+  mongodb:
+    image: mongo:latest
+    restart: always
+      #    ports:
+    #      - "12345:27017"
+    env_file:
+      - "environment/mongodb.env"
+    volumes:
+      - "data:/data/db"
+      - "configdb:/data/configdb"
+  redis:
+    image: redis:latest
+    restart: always
+volumes:
+  data: {}
+  configdb: {}

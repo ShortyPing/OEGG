@@ -1,6 +1,6 @@
 
 <div class="table-container">
-  <button routerLink="create">News-Artikel erstellen</button>
+  <button class="button-create" routerLink="create">News-Artikel erstellen</button>
   <table>
     <thead>
     <td>#</td>
@@ -15,6 +15,10 @@
       <td>{{article.title}}</td>
       <td>{{article.createdAt | date: "dd.MM.yyyy HH:mm:ss"}}</td>
       <td>{{article.createdBy | username | async}}</td>
+      <td>
+        <button class="button-delete" (click)="deleteArticle(article._id)">Löschen</button>
+        <button class="button-modify" [routerLink]="'edit/' + article._id">Bearbeiten</button>
+      </td>
     </tr>
     </tbody>
   </table>

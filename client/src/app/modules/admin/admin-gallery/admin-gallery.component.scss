@@ -1,0 +1,24 @@
+@use "src/app/_scss/components";
+.col-lg-4 {
+  margin-top: 50px;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.button-delete {
+  @include components.button(#af2525, white);
+  width: 100%;
+}
+
+.button-upload {
+  display: block;
+  margin: 0 auto;
+  @include components.button(#0d578c, white);
+
+}
+
+.container {
+  text-align: center;
+}

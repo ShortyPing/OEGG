@@ -1,0 +1,12 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="upload()">
+    <input (change)="onFileChange($event)" formControlName="file" type="file">
+    <button class="button-upload" type="submit">Hochladen</button>
+  </form>
+  <div class="row">
+    <div class="col-lg-4 col-md-12" *ngFor="let image of files">
+      <img [src]="backendUrl + '/gallery/stream/' + image._id">
+      <button class="button-delete" (click)="deleteImage(image._id)">Löschen</button>
+    </div>
+  </div>
+</div>

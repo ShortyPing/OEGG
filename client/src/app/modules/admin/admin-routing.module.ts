@@ -6,6 +6,8 @@ import {AdminHomeComponent} from "./admin-home/admin-home.component";
 import {AuthGuard} from "../../guards/auth.guard";
 import {AdminNewsComponent} from "./admin-news/admin-news.component";
 import {AdminNewsCreateComponent} from "./admin-news-create/admin-news-create.component";
+import {AdminNewsEditComponent} from "./admin-news-edit/admin-news-edit.component";
+import {AdminGalleryComponent} from "./admin-gallery/admin-gallery.component";
 
 const routes: Routes = [
   {
@@ -24,6 +26,14 @@ const routes: Routes = [
       {
         path: "news/create",
         component: AdminNewsCreateComponent
+      },
+      {
+        path: "news/edit/:id",
+        component: AdminNewsEditComponent
+      },
+      {
+        path: "gallery",
+        component: AdminGalleryComponent
       }
     ]
   },

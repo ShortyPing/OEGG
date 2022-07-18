@@ -3,18 +3,37 @@
 
 
 .table-container {
-  button {
-    @include components.button(#006400, white);
-    
-  }
+
 
   width: 100%;
   overflow-x: auto;
   text-align: center;
   margin: 15px;
+
   table {
     width: 100%;
   }
 
+
+}
+
+.button {
+  &-create {
+    @include components.button(#006400, white);
+  }
+
+  &-delete {
+    @include components.button(#7c0404, white);
+    @media screen and(max-width: 700px) {
+      width: 100%;
+    }
+  }
+
+  &-modify {
+    @include components.button(#a45e01, white);
+    @media screen and(max-width: 700px) {
+      width: 100%;
+    }
+  }
 
 }

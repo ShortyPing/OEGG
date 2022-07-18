@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, Param, Post, Query, Req, UseGuards} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Patch, Post, Query, Req, UseGuards} from '@nestjs/common';
 import {ApiBearerAuth, ApiOperation, ApiParam, ApiQuery, ApiTags} from "@nestjs/swagger";
 import {AuthGuard} from "@nestjs/passport";
 import {NewsCreateProperty} from "../../properties/news-create.property";
@@ -6,6 +6,7 @@ import {NewsService} from "./news.service";
 import {Request} from "express";
 import {IsString} from "class-validator";
 import {NewsSearchProperty} from "../../properties/news-search.property";
+import {NewsUpdateProperty} from "../../properties/news-update.property";
 
 @Controller('news')
 @ApiTags("News")
@@ -43,5 +44,14 @@ export class NewsController {
     @ApiParam({name: "id"})
     public async deleteNews(@Param("id") id: string) {
         return await this.newsService.deleteNews(id)
+    }
+
+    @Patch("/:id")
+    @ApiOperation({summary: "updates a news article"})
+    @ApiBearerAuth()
+    @UseGuards(AuthGuard("jwt"))
+    @ApiParam({name: "id"})
+    public async updateArticle(@Param("id") id: string, @Body() body: NewsUpdateProperty) {
+        return await this.newsService.updateNewsArticle(id, body.title, body.content)
     }
 }

@@ -29,4 +29,23 @@ export class NewsService {
         .set("Content-Type", "application/json")
     })
   }
+
+  deleteNewsArticle(id: string) {
+    return this.client.delete(environment.backendUrl + "/news/" + id, {
+      headers: new HttpHeaders()
+        .set("Authorization", `Bearer ${this.backendService.getToken()}`)
+        .set("Content-Type", "application/json")
+    })
+  }
+
+  updateNewsArticle(id: string, title: string, content: string) {
+    return this.client.patch(environment.backendUrl + "/news/" + id, {
+      title,
+      content
+    }, {
+      headers: new HttpHeaders()
+        .set("Authorization", `Bearer ${this.backendService.getToken()}`)
+        .set("Content-Type", "application/json")
+    })
+  }
 }

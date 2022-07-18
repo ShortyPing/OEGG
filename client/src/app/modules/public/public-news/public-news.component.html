@@ -10,7 +10,7 @@
       <div class="col-md-6" *ngFor="let article of newsArticles">
         <div class="card">
           <h2>{{article.title}}</h2>
-          <p>Autor: {{article.createdBy}}<br> Veröffentlichunsdatum: {{article.createdAt | date: "dd.MM.yyyy HH:mm:ss"}}</p>
+          <p>Autor: {{article.createdBy | username | async}}<br> Veröffentlichunsdatum: {{article.createdAt | date: "dd.MM.yyyy HH:mm:ss"}}</p>
           <button [routerLink]="'/news/read/' + article._id">Lesen</button>
 
         </div>

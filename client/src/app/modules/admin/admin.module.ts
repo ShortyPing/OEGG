@@ -10,6 +10,8 @@ import { AdminNewsComponent } from './admin-news/admin-news.component';
 import { AdminNewsCreateComponent } from './admin-news-create/admin-news-create.component';
 import {QuillModule} from "ngx-quill";
 import {SharedModule} from "../shared/shared.module";
+import { AdminNewsEditComponent } from './admin-news-edit/admin-news-edit.component';
+import { AdminGalleryComponent } from './admin-gallery/admin-gallery.component';
 
 
 
@@ -19,7 +21,9 @@ import {SharedModule} from "../shared/shared.module";
     AdminLoginComponent,
     AdminHomeComponent,
     AdminNewsComponent,
-    AdminNewsCreateComponent
+    AdminNewsCreateComponent,
+    AdminNewsEditComponent,
+    AdminGalleryComponent
   ],
   imports: [
     CommonModule,

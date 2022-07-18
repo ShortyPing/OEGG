@@ -9,6 +9,7 @@ import {JwtModule} from "@nestjs/jwt";
 import { NewsModule } from './_modules/news/news.module';
 import { RedisService } from './_services/redis/redis.service';
 import { SharedServiceModule } from './_services/shared-service-module/shared-service.module';
+import { GalleryModule } from './_modules/gallery/gallery.module';
 
 @Module({
     imports: [
@@ -18,7 +19,8 @@ import { SharedServiceModule } from './_services/shared-service-module/shared-se
         MongooseModule.forRoot(config().mongodbConnection),
         UserModule,
         NewsModule,
-        SharedServiceModule
+        SharedServiceModule,
+        GalleryModule
     ],
     controllers: [AppController],
     providers: [AppService],
