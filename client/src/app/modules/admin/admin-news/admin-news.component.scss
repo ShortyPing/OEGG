@@ -1,0 +1,20 @@
+@use "src/app/_scss/components";
+@use "src/app/_scss/colors";
+
+
+.table-container {
+  button {
+    @include components.button(#006400, white);
+    
+  }
+
+  width: 100%;
+  overflow-x: auto;
+  text-align: center;
+  margin: 15px;
+  table {
+    width: 100%;
+  }
+
+
+}

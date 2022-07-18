@@ -1,1 +1,20 @@
-<p>admin-init works!</p>
+<p>Eingeloggt als: {{user?.username}}</p>
+<div class="nav">
+  <div routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
+    Home
+  </div>
+  <div routerLink="/admin/news" routerLinkActive="active" class="nav-item">
+    Neuigkeiten
+  </div>
+  <div routerLink="/admin/gallery" routerLinkActive="active" class="nav-item">
+    Galerie
+  </div>
+  <div routerLink="/admin/settings" routerLinkActive="active" class="nav-item">
+    Systemeinstellungen
+  </div>
+  <div class="nav-item logout" (click)="backendService.logout(true)">
+    Ausloggen
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,78 +1,76 @@
 <div class="titlewrapper">
-    <div id="titlebox" class="container">
+  <div id="titlebox" class="container">
 
-        <div class="row">
-            <div class="col-sm-3">
-                <img id="logo" src="/assets/img/pan-logo.PNG" width="150">
-            </div>
-            
-            <div class="col-sm-6">
-                <h1 id="title">Österreich-Guatemala Gesellschaft</h1>
-            </div>
-            <div class="col-sm-3">
+    <div class="row">
+      <div class="col-sm-3">
+        <img id="logo" src="/assets/img/pan-logo.PNG" width="150">
+      </div>
 
-                <img id="logo" src="/assets/img/guatemala.png" width="150">
-            </div>
-        </div>
+      <div class="col-sm-6">
+        <h1 id="title">Österreich-Guatemala Gesellschaft</h1>
+      </div>
+      <div class="col-sm-3">
+
+        <img id="logo" src="/assets/img/guatemala.png" width="150">
+      </div>
     </div>
+  </div>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <button class="navbar-toggler" data-target="#navbar" data-toggle="collapse" aria-controls="navbar"
+  <div class="container">
+    <button class="navbar-toggler" data-target="#navbar" data-toggle="collapse" aria-controls="navbar"
             aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a class="nav-link" routerLink="/">Startseite</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a class="nav-link" routerLink="/goals">Zielsetzung</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a class="nav-link" routerLink="/membership">Mitgliedschaft</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a class="nav-link" routerLink="/directors">Vorstand</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a class="nav-link" routerLink="/links">Links</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a class="nav-link" routerLink="/activities">Aktivitäten</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a class="nav-link" routerLink="/gallery">Galerie</a>
-                </li>
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a class="nav-link" routerLink="/contact">Kontakt</a>
-                </li>
-            </ul>
-        </div>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/">Startseite</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/goals">Zielsetzung</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/news">Neuigkeiten</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/membership">Mitgliedschaft</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/directors">Vorstand</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/links">Links</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/activities">Aktivitäten</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/gallery">Galerie</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/contact">Kontakt</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
 
 
-
-
-
-
 <div class="c">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
 
 
-
 <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 link" routerLink="/imprint">Impressum</div>
-            
-            <div class="col-sm-6 copyright">&copy; {{year}} ÖGG » Alle Rechte vorbehalten - All rights reserved</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 link" routerLink="/imprint">Impressum</div>
 
-            <div class="col-sm-3 link" routerLink="/privacy">Datenschutzerklärung</div>
-        </div>
+      <div class="col-sm-6 copyright">&copy; {{year}} ÖGG » Alle Rechte vorbehalten - All rights reserved</div>
+
+      <div class="col-sm-3 link" routerLink="/privacy">Datenschutzerklärung</div>
     </div>
+  </div>
 </footer>

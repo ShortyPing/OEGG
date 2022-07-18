@@ -1,0 +1,21 @@
+
+<div class="table-container">
+  <button routerLink="create">News-Artikel erstellen</button>
+  <table>
+    <thead>
+    <td>#</td>
+    <td>Titel</td>
+    <td>Erstellt am</td>
+    <td>Erstellt von</td>
+    <td>Verwalten</td>
+    </thead>
+    <tbody>
+    <tr *ngFor="let article of news; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{article.title}}</td>
+      <td>{{article.createdAt | date: "dd.MM.yyyy HH:mm:ss"}}</td>
+      <td>{{article.createdBy | username | async}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

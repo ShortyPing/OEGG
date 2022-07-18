@@ -1,0 +1,22 @@
+@use "src/app/_scss/components";
+
+input {
+  display: block;
+  border: 1px lightgray solid;
+  padding: 5px;
+  margin: 5px auto 15px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  @include components.button(green, white);
+  width: 100%;
+  margin-top: 20px;
+}
+
+quill-editor {
+  margin: 20px;
+}

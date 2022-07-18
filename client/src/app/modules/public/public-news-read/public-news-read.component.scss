@@ -1,0 +1,10 @@
+@use "src/app/_scss/components";
+
+.card {
+  padding: 10px;
+}
+
+button {
+  @include components.button(#0868a1, white);
+  margin-bottom: 5px;
+}

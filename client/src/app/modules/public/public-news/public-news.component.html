@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Neuigkeiten</h1>
+
+  <p>Hier finden Sie aktuelle Artikel und Informationen</p>
+  <hr>
+
+
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-6" *ngFor="let article of newsArticles">
+        <div class="card">
+          <h2>{{article.title}}</h2>
+          <p>Autor: {{article.createdBy}}<br> Veröffentlichunsdatum: {{article.createdAt | date: "dd.MM.yyyy HH:mm:ss"}}</p>
+          <button [routerLink]="'/news/read/' + article._id">Lesen</button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

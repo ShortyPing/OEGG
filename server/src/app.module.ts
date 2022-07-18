@@ -6,6 +6,9 @@ import {MongooseModule} from "@nestjs/mongoose";
 import { UserModule } from './_modules/user/user.module';
 import config from "./config";
 import {JwtModule} from "@nestjs/jwt";
+import { NewsModule } from './_modules/news/news.module';
+import { RedisService } from './_services/redis/redis.service';
+import { SharedServiceModule } from './_services/shared-service-module/shared-service.module';
 
 @Module({
     imports: [
@@ -13,10 +16,13 @@ import {JwtModule} from "@nestjs/jwt";
             isGlobal: true
         }),
         MongooseModule.forRoot(config().mongodbConnection),
-        UserModule
+        UserModule,
+        NewsModule,
+        SharedServiceModule
     ],
     controllers: [AppController],
     providers: [AppService],
+    exports: []
 })
 export class AppModule {
 }

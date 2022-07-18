@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {BackendService} from "../../../services/backend/backend.service";
+import {User} from "../../../_interface/user.interface";
 
 @Component({
   selector: 'app-admin-init',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminInitComponent implements OnInit {
 
-  constructor() { }
+  constructor(public backendService: BackendService) { }
+
+  user: User;
 
   ngOnInit(): void {
+    this.backendService.user.subscribe({
+      next: user => this.user = user
+    })
   }
 
 }

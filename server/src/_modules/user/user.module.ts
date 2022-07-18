@@ -8,6 +8,7 @@ import {JwtModule} from "@nestjs/jwt";
 import config from "../../config";
 import {ConfigModule, ConfigService} from "@nestjs/config";
 import {v4} from "uuid";
+import {SharedServiceModule} from "../../_services/shared-service-module/shared-service.module";
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import {v4} from "uuid";
       JwtModule.register({
           //secret: v4()
           secret: config().jwtSecret
-      })
+      }),
+      SharedServiceModule
   ],
   controllers: [UserController],
   providers: [UserService, JwtStrategy]

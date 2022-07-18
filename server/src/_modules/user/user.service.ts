@@ -6,10 +6,11 @@ import * as bcrypt from 'bcrypt'
 import {JwtService} from "@nestjs/jwt";
 import {doc} from "prettier";
 import * as mongoose from "mongoose";
+import {RedisService} from "../../_services/redis/redis.service";
 @Injectable()
 export class UserService {
 
-    constructor(@InjectModel(User.name) private userModel: Model<User>, private jwtService: JwtService) {
+    constructor(@InjectModel(User.name) private userModel: Model<User>, private jwtService: JwtService, private redisService: RedisService) {
     }
 
     async createUser(username: string, email: string, password: string) {
@@ -88,6 +89,38 @@ export class UserService {
                 }
                 resolve(document)
             })
+        })
+    }
+
+    async getUsername(id: string) {
+        return new Promise(async (resolve, reject) => {
+            if(!mongoose.Types.ObjectId.isValid(id)) {
+                reject(new NotFoundException())
+                return;
+            }
+
+            let username = await this.redisService.getCached(`username-${id}`);
+
+            if(username) {
+                resolve({
+                    status: "ok",
+                    username
+                });
+                return;
+            }
+
+            this.userModel.findById(id).then(document => {
+                if(document) {
+                    this.redisService.cache(`username-${id}`, document.username);
+                    resolve({
+                        status: "ok",
+                        username: document.username
+                    });
+                    return;
+                }
+                reject(new NotFoundException())
+            })
+
         })
     }
 }

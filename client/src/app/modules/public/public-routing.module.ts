@@ -11,6 +11,8 @@ import { PublicInitComponent } from './public-init/public-init.component';
 import { PublicLinksComponent } from './public-links/public-links.component';
 import { PublicMembershipComponent } from './public-membership/public-membership.component';
 import { PublicPrivacyComponent } from './public-privacy/public-privacy.component';
+import {PublicNewsComponent} from "./public-news/public-news.component";
+import {PublicNewsReadComponent} from "./public-news-read/public-news-read.component";
 
 const routes: Routes = [
   {
@@ -56,6 +58,14 @@ const routes: Routes = [
       {
         path: "imprint",
         component: PublicImprintComponent
+      },
+      {
+        path: "news",
+        component: PublicNewsComponent
+      },
+      {
+        path: "news/read/:id",
+        component: PublicNewsReadComponent
       }
     ]
   }

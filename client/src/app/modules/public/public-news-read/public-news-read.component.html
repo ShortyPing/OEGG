@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Neuigkeiten</h1>
+
+  <p>Hier finden Sie aktuelle Artikel und Informationen</p>
+  <hr>
+
+  <button routerLink="/news">Zurück</button>
+  <div class="card">
+    <h2>{{article?.title|| "Loading..."}}</h2>
+    <p>Autor: {{(article?.createdBy | username | async) || "Loading..."}} <br> Erstellt am: {{((article?.createdAt || 0) | date: "dd.MM.yyyy HH:mm:ss")}}</p>
+    <div class="content" [innerHTML]="article?.content || 'Loading...'"></div>
+  </div>
+</div>

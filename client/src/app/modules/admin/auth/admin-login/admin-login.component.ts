@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validator, Validators} from "@angular/forms";
 import {BackendService} from "../../../../services/backend/backend.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-login',
@@ -9,7 +10,7 @@ import {BackendService} from "../../../../services/backend/backend.service";
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private backendService: BackendService) { }
+  constructor(private fb: FormBuilder, private backendService: BackendService, private router: Router) { }
 
   loginForm = this.fb.group({
     username: ['', Validators.required],
@@ -21,8 +22,14 @@ export class AdminLoginComponent implements OnInit {
   login() {
     if(this.loginForm.valid) {
       this.backendService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe({
-        next: () => {
-
+        next: (res) => {
+          localStorage.setItem("token", res["token"]);
+          this.backendService.requestUser().subscribe({
+            next: user => {
+              this.backendService.user.next(user);
+              this.router.navigate(['/admin']);
+            }
+          })
         },
         error: (err) => {
           if(err.error.statusCode == 401) {

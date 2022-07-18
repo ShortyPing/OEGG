@@ -1,0 +1,6 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <input formControlName="title" placeholder="Titel">
+  <quill-editor formControlName="content"></quill-editor>
+
+  <button type="submit">Speichern (Änderungen KÖNNEN bis zu 1 Minute in Anspruch nehmen)</button>
+</form>
